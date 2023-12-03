@@ -13,7 +13,7 @@ Takeaways from completing this project include the application of concepts surro
 N/A
 
 ## Usage 
-Go to link: https://jpwu23.github.io/Jimmy-Wu-Portfolio/ Simply click on the "Generate Password" button to start the program, and follow the prompts that appear at the top of the window to specify your preferences for the randomly generated password. Once generated, click "Generate Password" again if you would like another password to be generated. Make sure to specify at least one password criterion and enter a valid password length to avoid any issues.
+Go to link: https://jpwu23.github.io/random-password-generator/ Simply click on the "Generate Password" button to start the program, and follow the prompts that appear at the top of the window to specify your preferences for the randomly generated password. Once generated, click "Generate Password" again if you would like another password to be generated. Make sure to specify at least one password criterion and enter a valid password length to avoid any issues.
 
 ![alt text](assets/images/screenshot2.PNG)
 
