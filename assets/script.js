@@ -6,21 +6,33 @@ var lowerChar;
 var upperChar;
 var length;
 
+// Declare a function to ask for a valid password length until one is selected
+var getPasswordLength = function () {
+  var passwordLength;
+  do {
+    passwordLength = parseInt(window.prompt("Enter a password length (between 8 and 128 characters):"));
+    if (isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128) {
+      window.alert("Please select at least one criterion or provide a valid length.");
+    }
+  } while (isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128);
+  return passwordLength;
+};
+
 // Function to ask the user's criterion for password generation
 var newPassword = function () {
   do {
-    // Prompt user using OK/Cancel prompt and parsing the the window.prompt user input as an integer
+    // Prompt user using OK/Cancel prompt(s)
+    length = getPasswordLength();
     specialChar = window.confirm("Would you like your password to include special characters?");
     numericChar = window.confirm("Would you like your password to include numeric characters?");
     lowerChar = window.confirm("Would you like your password to include lowercase characters?");
     upperChar = window.confirm("Would you like your password to include upper characters?");
-    length = parseInt(window.prompt("Enter a password length (between 8 and 128 characters):"));
 
-    // Until at least 1 window.confirm criterion is selected OR length of password given by user meets the requirements of 8-128 char - alert and keep prompting
-    if (!(specialChar || numericChar || lowerChar || upperChar) || isNaN(length) || length < 8 || length > 128) {
+    // Until at least 1 window.confirm criterion is selected, alert and keep prompting
+    if (!(specialChar || numericChar || lowerChar || upperChar)) {
       window.alert("Please select at least one criterion or provide a valid length.");
     }
-  } while (!(specialChar || numericChar || lowerChar || upperChar) || isNaN(length) || length < 8 || length > 128);
+  } while (!(specialChar || numericChar || lowerChar || upperChar));
 
   // Call the generatePassword function so the password is generated with user choices taking into account
   var password = generatePassword(specialChar, numericChar, lowerChar, upperChar, length);
